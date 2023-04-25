@@ -18,7 +18,7 @@ namespace MatterWebAPI.Controllers
         {
             _service = service;
         }
-      
+
 
 
         [HttpGet("{clientId:int}/matters")]
@@ -32,37 +32,55 @@ namespace MatterWebAPI.Controllers
         {
             return _service.GetInvoicesByMatterId(matterId);
         }
-
-        [HttpPost("matters")]
-        public IActionResult CreateNewMatter([FromBody] MatterDto Matter)
+        [HttpPost]
+        public IActionResult CreateNewMatter([FromBody] MatterDto matterDto)
         {
-            if (ModelState.IsValid)
+            if (matterDto == null)
             {
-                _service.CreateNewMatter(Matter);
-                return Ok();
+                return BadRequest();
             }
-            else
+
+            _service.CreateNewMatter(matterDto);
+
+            return CreatedAtAction(nameof(GetAllMatters), new { }, matterDto);
+        }
+        [HttpGet]
+        public IActionResult GetAllMatters()
+        {
+            var matters = _service.GetAllMatters();
+
+            return Ok(matters);
+        }
+
+        [HttpDelete("{id}")]
+        public IActionResult DeleteMatter(int id)
+        {
+            if (id <= 0)
             {
-                return BadRequest(ModelState);
+                return BadRequest();
             }
+
+            _service.DeleteMatter(id);
+
+            return NoContent();
         }
 
 
-        /*
-        [HttpPost("matters")]
-        public IActionResult CreateNewMatter([FromBody] MatterDto Matter)
+        [HttpPut("{id}")]
+        public IActionResult UpdateMatter(int id, [FromBody] MatterDto matterDto)
         {
-            if (ModelState.IsValid)
+            if (matterDto == null || id <= 0)
             {
-                _service.CreateNewMatter(Matter);
-                return Ok();
+                return BadRequest();
             }
-            else
-            {
-                return BadRequest(ModelState);
-            }
+
+            _service.UpdateMatter(id, matterDto);
+
+            return NoContent();
         }
-        */
+
+
+
 
     }
 }
