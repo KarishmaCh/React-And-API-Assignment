@@ -1,6 +1,7 @@
 using MatterWebAPI;
-
+using MatterWebAPI.Interface;
 using MatterWebAPI.Service;
+using MatterWebAPI.Services;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -9,6 +10,7 @@ var builder = WebApplication.CreateBuilder(args);
 //builder.Services.AddScoped<ClientService>();
 builder.Services.AddScoped<InvoiceService>();
 builder.Services.AddScoped< MatterService>();
+builder.Services.AddScoped<IAttorneyService, AttorneyService>();
 
 
 builder.Services.AddDbContext<AppDbContext>(options =>
