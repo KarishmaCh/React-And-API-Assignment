@@ -8,10 +8,12 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 //builder.Services.AddScoped<ClientService>();
+builder.Services.AddScoped<IInvoiceService, InvoiceService>();
 builder.Services.AddScoped<InvoiceService>();
-builder.Services.AddScoped< MatterService>();
-builder.Services.AddScoped<IAttorneyService, AttorneyService>();
 
+builder.Services.AddScoped<MatterService>();
+builder.Services.AddScoped<IAttorneyService, AttorneyService>();
+builder.Services.AddScoped<JurisdictionService>();
 
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DevConnection")));

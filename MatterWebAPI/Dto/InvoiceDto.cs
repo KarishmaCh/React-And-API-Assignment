@@ -12,8 +12,7 @@ namespace MatterWebAPI.Dto
         public int MatterId { get; set; }
         public int AttorneyId { get; set; }
 
-        public virtual Matter? Matter { get; set; }
-        public virtual Attorney? Attorney { get; set; }
+      
 
 
     }
