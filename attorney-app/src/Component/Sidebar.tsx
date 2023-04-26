@@ -10,7 +10,7 @@ const SideBar: React.FC<SideBarProps> = () => {
     return (
         <Navbar bg="dark" variant="dark" expand="md" className="flex-column fixed-left">
             <div className="sidebar-sticky pt-3">
-                <Navbar.Brand as={Link} to="/">
+                <Navbar.Brand as={Link} to="/Dashboard">
                     Dashboard
                 </Navbar.Brand>
                 <Nav className="flex-column">
@@ -24,6 +24,14 @@ const SideBar: React.FC<SideBarProps> = () => {
                     <NavDropdown title="Invoice">
                       
                         <NavDropdown.Item as={Link} to="/MatterInvoices">Matter Invoices</NavDropdown.Item>
+                      
+                    </NavDropdown>
+
+                    
+                    <NavDropdown title="Invoice Billing">
+                      
+                        <NavDropdown.Item as={Link} to="/Billing">Invoice Bill</NavDropdown.Item>
+                        <NavDropdown.Item as={Link} to="/BillingShow">Attorney Bill </NavDropdown.Item>
                       
                     </NavDropdown>
                 </Nav>

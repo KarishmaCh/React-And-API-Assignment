@@ -76,6 +76,7 @@ function MatterInvoices() {
 
   return (
     <div className="Main">
+      <h1>Matter Invoices</h1>
       <div className='d-flex justify-content-center mt-8'>
         <Card>
           <Card.Header as="h3">{attorneyName} - {matterData.length > 0 ? matterData[0].name : 'Select a Matter'}</Card.Header> {/* Add attorney name to card header */}

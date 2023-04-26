@@ -7,6 +7,9 @@ import MatterForm from './Component/MatterForm';
 import SideBar from './Component/Sidebar';
 import MatterView from './Component/MatterView';
 import MatterViewClient from './Component/MatterViewClient';
+import Billing from './Component/Billing';
+import BillingShow from './Component/BillingShow';
+import Dashboard from './Component/Dashboard';
 const App = () => {
   return (
     <BrowserRouter>
@@ -19,11 +22,14 @@ const App = () => {
           </div>
           <div className="col-md-10 pt-3">
             <Routes>
-            
-              <Route path="/MatterForm" element={<MatterForm />} />
-              <Route path="/MatterView" element={<MatterView />} />
-              <Route path="/MatterViewClient" element={<MatterViewClient />} />
-              <Route path="/MatterInvoices" element={<MatterInvoices />} />
+            <Route path="/dashboard" Component={Dashboard} />
+<Route path="/MatterForm" element={<MatterForm />} />
+<Route path="/MatterView" element={<MatterView />} />
+<Route path="/MatterViewClient" element={<MatterViewClient />} />
+<Route path="/MatterInvoices" element={<MatterInvoices />} />
+<Route path="/Billing" element={<Billing />} />
+<Route path="/BillingShow" element={<BillingShow />} />
+
 
 
             </Routes>
