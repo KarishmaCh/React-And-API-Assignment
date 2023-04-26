@@ -18,7 +18,7 @@ const SideBar: React.FC<SideBarProps> = () => {
                     <NavDropdown title="Matter">
                         <NavDropdown.Item as={Link} to="/MatterForm">Add Matter</NavDropdown.Item>
                         <NavDropdown.Item as={Link} to="/MatterView">View Matter</NavDropdown.Item>
-                    
+                        <NavDropdown.Item as={Link} to="/MatterViewClient">Client Matters</NavDropdown.Item>
                     </NavDropdown>
                 </Nav>
             </div>

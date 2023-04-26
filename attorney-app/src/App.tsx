@@ -6,6 +6,7 @@ import NavBar from './Component/Navbar';
 import MatterForm from './Component/MatterForm';
 import SideBar from './Component/Sidebar';
 import MatterView from './Component/MatterView';
+import MatterViewClient from './Component/MatterViewClient';
 const App = () => {
   return (
     <BrowserRouter>
@@ -21,6 +22,7 @@ const App = () => {
             
               <Route path="/MatterForm" element={<MatterForm />} />
               <Route path="/MatterView" element={<MatterView />} />
+              <Route path="/MatterViewClient" element={<MatterViewClient />} />
 
             </Routes>
           </div>
