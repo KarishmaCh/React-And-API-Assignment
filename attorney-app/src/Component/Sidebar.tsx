@@ -20,6 +20,12 @@ const SideBar: React.FC<SideBarProps> = () => {
                         <NavDropdown.Item as={Link} to="/MatterView">View Matter</NavDropdown.Item>
                         <NavDropdown.Item as={Link} to="/MatterViewClient">Client Matters</NavDropdown.Item>
                     </NavDropdown>
+
+                    <NavDropdown title="Invoice">
+                      
+                        <NavDropdown.Item as={Link} to="/MatterInvoices">Matter Invoices</NavDropdown.Item>
+                      
+                    </NavDropdown>
                 </Nav>
             </div>
         </Navbar>

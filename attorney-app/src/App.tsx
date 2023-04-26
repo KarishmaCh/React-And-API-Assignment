@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css';
-
+import MatterInvoices from './Component/MatterInvoices';
 import NavBar from './Component/Navbar';
 import MatterForm from './Component/MatterForm';
 import SideBar from './Component/Sidebar';
@@ -23,6 +23,8 @@ const App = () => {
               <Route path="/MatterForm" element={<MatterForm />} />
               <Route path="/MatterView" element={<MatterView />} />
               <Route path="/MatterViewClient" element={<MatterViewClient />} />
+              <Route path="/MatterInvoices" element={<MatterInvoices />} />
+
 
             </Routes>
           </div>
