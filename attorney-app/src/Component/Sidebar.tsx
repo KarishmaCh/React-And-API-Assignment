@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Navbar, Nav, NavDropdown } from 'react-bootstrap';
-import MatterForm from './MatterForm';
+
 import '../App.css';
 
 interface SideBarProps { }
@@ -17,7 +17,8 @@ const SideBar: React.FC<SideBarProps> = () => {
 
                     <NavDropdown title="Matter">
                         <NavDropdown.Item as={Link} to="/MatterForm">Add Matter</NavDropdown.Item>
-                        <NavDropdown.Item as={Link} to="/ViewMatter">View Matter</NavDropdown.Item>
+                        <NavDropdown.Item as={Link} to="/MatterView">View Matter</NavDropdown.Item>
+                    
                     </NavDropdown>
                 </Nav>
             </div>

@@ -5,7 +5,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import NavBar from './Component/Navbar';
 import MatterForm from './Component/MatterForm';
 import SideBar from './Component/Sidebar';
-
+import MatterView from './Component/MatterView';
 const App = () => {
   return (
     <BrowserRouter>
@@ -20,6 +20,8 @@ const App = () => {
             <Routes>
             
               <Route path="/MatterForm" element={<MatterForm />} />
+              <Route path="/MatterView" element={<MatterView />} />
+
             </Routes>
           </div>
         </div>
